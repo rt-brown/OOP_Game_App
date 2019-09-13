@@ -8,4 +8,9 @@
          this.phrases = [];
          this.activePhrase = null;
      }
+
+     createPhrase(){
+         const newPhrases = [];
+         
+     }
  }
