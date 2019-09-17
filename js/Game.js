@@ -29,4 +29,15 @@
         
         return newListofPhrases;
      };
+
+     getRandomPhrase(){
+        function randomNumber(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        };
+        
+        const number = randomNumber(0,4);
+
+        return this.phrases[number];
+      
+     }
  };
