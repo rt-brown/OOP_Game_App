@@ -8,6 +8,9 @@
          this.phrases = this.createPhrases();
          this.activePhrase = null;
      }
+/**
+* Creates phrases for use in game
+* @return {array} An array of phrases that could be used in the game */
 
      createPhrases(){
          const listOfphrases = 
@@ -29,7 +32,10 @@
         
         return newListofPhrases;
      };
-
+/**
+ * Selects random phrase from phrases property
+ * @return {Object} Phrase object chosen to be used
+ */
      get randomPhrase(){
         function randomNumber(min, max) {
             return Math.round(Math.random() * (max - min) + min);
@@ -39,4 +45,13 @@
 
         return this.phrases[number]; 
      }
+/**
+ * Begins game by selecting a random phrase and displaying it to user
+ */
+     startGame(){
+        document.getElementById('overlay').style.visibility = "hidden";
+        this.randomPhrase;
+        phrase.addPhraseToDisplay();
+        this.activePhrase = this.randomPhrase;
+     };
  };
