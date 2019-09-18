@@ -12,11 +12,11 @@
      createPhrases(){
          const listOfphrases = 
          [
-             'Tell me and I forget. Teach me and I remember. Involve me and I learn.',
-             'It is during our darkest moments that we must focus to see the light.',
-             'Never let the fear of striking out keep you from playing the game.',
-             "You miss 100% of the shots you don't take.",
-             "Believe you can and you're halfway there."
+             'Where is my phone',
+             'I need coffee',
+             'The New York Giants suck',
+             'I love my wife',
+             'I love my son'
         ];
 
         const newListofPhrases = [];
@@ -30,14 +30,13 @@
         return newListofPhrases;
      };
 
-     getRandomPhrase(){
+     get randomPhrase(){
         function randomNumber(min, max) {
             return Math.round(Math.random() * (max - min) + min);
         };
         
         const number = randomNumber(0,4);
 
-        return this.phrases[number];
-      
+        return this.phrases[number]; 
      }
  };
