@@ -10,7 +10,7 @@
  * Display phrase on game board
  */
      addPhraseToDisplay(){
-        const arrayOfcharacters = randomPhrase.phrase.split('');
+        const arrayOfcharacters = this.phrase.split('');
         const phraseDiv = document.getElementById('phrase');
         const phraseUl = phraseDiv.firstElementChild;
 

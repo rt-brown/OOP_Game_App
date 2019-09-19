@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
- class Game{
+ class Game {
      constructor(){
          this.missed = 0;
          this.phrases = this.createPhrases();
@@ -36,7 +36,7 @@
  * Selects random phrase from phrases property
  * @return {Object} Phrase object chosen to be used
  */
-     get randomPhrase(){
+     getrandomPhrase(){
         function randomNumber(min, max) {
             return Math.round(Math.random() * (max - min) + min);
         };
@@ -50,8 +50,9 @@
  */
      startGame(){
         document.getElementById('overlay').style.visibility = "hidden";
-        this.randomPhrase;
-        phrase.addPhraseToDisplay();
-        this.activePhrase = this.randomPhrase;
+        this.activePhrase = this.getrandomPhrase();
+        //this.randomPhrase;
+        this.activePhrase.addPhraseToDisplay();
+        //this.activePhrase = this.randomPhrase;
      };
  };
