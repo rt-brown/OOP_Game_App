@@ -58,9 +58,17 @@
         }); 
      }
 
-     showMatchedLetter(letter){
+/**
+ * Displays passed letter on screen after a match is found
+ * @param (string) letter - Letter to display
+ */
+
+     showMatchedLetter(letter, index){
          let matchedLetter = document.getElementsByClassName(`hide letter ${letter}`);
-         matchedLetter.className = `show letter ${letter}`;
+         for (let index = 0; index < matchedLetter.length; index++) {
+             matchedLetter[index].className = `show letter ${letter}`
+             
+         }
      }
  }
 
