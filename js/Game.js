@@ -53,6 +53,7 @@
         this.activePhrase = this.getrandomPhrase();
         //this.randomPhrase;
         this.activePhrase.addPhraseToDisplay();
+        this.activePhrase.checkLetter();
         //this.activePhrase = this.randomPhrase;
      };
  };

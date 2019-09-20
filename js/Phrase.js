@@ -6,6 +6,7 @@
      constructor(phrase){
         this.phrase = phrase.toLowerCase();
      }
+     
 /**
  * Display phrase on game board
  */
@@ -34,6 +35,27 @@
             }
         });
         
+     }
+
+     /**
+     * Checks if passed letter is in phrase
+     * @param (string) letter - Letter to check
+     */
+
+     checkLetter(letter){
+        let count = 0;
+        this.phrase.split('').forEach((currentValue) => {
+            
+            if (letter === currentValue) {
+                //call showMatchedLetter();
+            } else if (letter != currentValue) {
+                count++;
+            }
+            
+            if (count === this.phrase.split('').length){
+                //call removeLife();
+            }
+        }); 
      }
  }
 
