@@ -47,7 +47,7 @@
         this.phrase.split('').forEach((currentValue) => {
             
             if (letter === currentValue) {
-                //call showMatchedLetter();
+                this.showMatchedLetter(letter);
             } else if (letter != currentValue) {
                 count++;
             }
@@ -56,6 +56,11 @@
                 //call removeLife();
             }
         }); 
+     }
+
+     showMatchedLetter(letter){
+         let matchedLetter = document.getElementsByClassName(`hide letter ${letter}`);
+         matchedLetter.className = `show letter ${letter}`;
      }
  }
 
