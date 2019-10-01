@@ -9,4 +9,5 @@ startGamebutton.addEventListener('click', () => {
     game = new Game();
     game.startGame();
     game.checkForwin();
+    game.removeLife();
 })
