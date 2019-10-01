@@ -8,4 +8,5 @@ const startGamebutton = document.getElementById('btn__reset');
 startGamebutton.addEventListener('click', () => {
     game = new Game();
     game.startGame();
+    game.checkForwin();
 })

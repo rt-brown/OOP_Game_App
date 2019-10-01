@@ -14,6 +14,7 @@
         const arrayOfcharacters = this.phrase.split('');
         const phraseDiv = document.getElementById('phrase');
         const phraseUl = phraseDiv.firstElementChild;
+        phraseUl.className = 'phrase-ul';
 
         arrayOfcharacters.forEach(element => {
 
@@ -63,11 +64,10 @@
  * @param (string) letter - Letter to display
  */
 
-     showMatchedLetter(letter, index){
+     showMatchedLetter(letter){
          let matchedLetter = document.getElementsByClassName(`hide letter ${letter}`);
          for (let index = 0; index < matchedLetter.length; index++) {
              matchedLetter[index].className = `show letter ${letter}`
-             
          }
      }
  }
