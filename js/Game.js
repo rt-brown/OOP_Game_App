@@ -56,4 +56,17 @@
         this.activePhrase.checkLetter('e');
         //this.activePhrase = this.randomPhrase;
      };
+     //filter method isn't working
+     checkForwin(){
+        const allLetters = Array.from(document.querySelectorAll('.phrase-ul > li'));
+        const visibleLetters = Array.from(document.querySelectorAll("[class^=show]"));
+        const filteredArray = allLetters.filter((element) => {
+            return element.className != 'space'
+        })
+        if (filteredArray.length === visibleLetters.length) {
+            return true
+        } else {
+            return false
+        }
+     }
  };
