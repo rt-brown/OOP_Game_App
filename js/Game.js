@@ -71,11 +71,10 @@
      }
 
      removeLife(){
-        let missed = 0;
-        missed += 1
+        this.missed += 1
         const hearts = document.querySelectorAll('.tries > img');
-        hearts[missed-1].src = 'images/lostHeart.png';
-        if (missed === 5) {
+        hearts[this.missed-1].src = 'images/lostHeart.png';
+        if (this.missed === 5) {
             this.gameOver();
         }
      };
