@@ -45,16 +45,31 @@
 
      checkLetter(letter){
         let count = 0;
-        this.phrase.split('').forEach((currentValue) => {
+        const phraseArray = Array.from(document.querySelectorAll('.phrase-ul > li'));
+        //console.log(phraseArray);
+        const newArray = phraseArray.filter((element) => {
+            return element.className != 'space'
+        })
+        console.log(newArray);
+        newArray.forEach((currentValue) => {
             
-            if (letter === currentValue) {
-                this.showMatchedLetter(letter);
-            } else if (letter != currentValue) {
-                count++;
+            if (letter === currentValue.textContent) {
+                console.log('true');
+                return true;
+                
+            } 
+            
+            if (letter != currentValue.textContent) {
+                count +=1
+                console.log(count);
+                
             }
             
-            if (count === this.phrase.split('').length){
-                //call removeLife();
+            if (count === newArray.length){
+                //console.log(newArray.length);
+                console.log('all false');
+                //game.removeLife();
+                return false
             }
         }); 
      }

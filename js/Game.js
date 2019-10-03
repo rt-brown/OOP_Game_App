@@ -53,7 +53,7 @@
         this.activePhrase = this.getrandomPhrase();
         //this.randomPhrase;
         this.activePhrase.addPhraseToDisplay();
-        this.activePhrase.checkLetter('e');
+        //this.activePhrase.checkLetter();
         //this.activePhrase = this.randomPhrase;
      };
      //filter method isn't working
@@ -78,4 +78,33 @@
             this.gameOver();
         }
      };
+
+    gameOver(){
+        const overlay = document.getElementById('overlay');
+        overlay.style.visibility = "visible";
+        const overlayH1 = document.getElementById('game-over-message');
+        if (this.checkForwin() === true ){
+            overlay.className = 'win';
+            overlayH1.textContent = 'Congrats you have won!';
+        } else {
+            overlay.className = 'lose'
+            overlayH1.textContent = 'Game Over'
+        }
+    }
+
+    handleInteraction(button){
+        console.log(button.textContent);
+        button.disabled = true;
+        const checkLetter = this.activePhrase.checkLetter(button.textContent);
+        if (checkLetter === true) {
+            button.className = 'chosen';
+            this.showMatchedLetter(button.textContent);
+        } 
+        
+        if(checkLetter === false){
+            button.className = 'wrong';
+            this.removeLife();
+        }
+    }
+
  };
