@@ -50,7 +50,7 @@
         const newArray = phraseArray.filter((element) => {
             return element.className != 'space'
         })
-        console.log(newArray);
+        
         newArray.forEach((currentValue) => {
             
             if (letter === currentValue.textContent) {
@@ -59,7 +59,8 @@
                 
             } 
             
-            if (letter != currentValue.textContent) {
+            
+            /*if (letter != currentValue.textContent) {
                 count +=1
                 console.log(count);
                 
@@ -70,8 +71,10 @@
                 console.log('all false');
                 //game.removeLife();
                 return false
-            }
+            }*/
         }); 
+        
+        return false;
      }
 
 /**

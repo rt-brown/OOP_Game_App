@@ -98,7 +98,7 @@
         const checkLetter = this.activePhrase.checkLetter(button.textContent);
         if (checkLetter === true) {
             button.className = 'chosen';
-            this.showMatchedLetter(button.textContent);
+            this.activePhrase.showMatchedLetter(button.textContent);
         } 
         
         if(checkLetter === false){
