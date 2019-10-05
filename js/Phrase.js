@@ -64,7 +64,6 @@
 
      showMatchedLetter(letter){
         const liElements = document.querySelectorAll('.phrase-ul li');
-        console.log(letter.classList);
         for (let index = 0; index < liElements.length; index++) {
             
             if (letter.textContent === liElements[index].textContent) {

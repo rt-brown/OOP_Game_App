@@ -59,7 +59,7 @@
      //filter method isn't working
      checkForwin(){
         const allLetters = Array.from(document.querySelectorAll('.phrase-ul > li'));
-        const visibleLetters = Array.from(document.querySelectorAll("[class^=show]"));
+        const visibleLetters = Array.from(document.querySelectorAll("[class$=show]"));
         const filteredArray = allLetters.filter((element) => {
             return element.className != 'space'
         })
@@ -93,12 +93,15 @@
     }
 
     handleInteraction(button){
-        //console.log(button.textContent);
         button.disabled = true;
         const checkLetter = this.activePhrase.checkLetter(button.textContent);
         if (checkLetter === true) {
             button.className = 'chosen';
             this.activePhrase.showMatchedLetter(button);
+            this.checkForwin();
+            if (this.checkForwin() === true) {
+                setTimeout(() => {this.gameOver()}, 1000) 
+            }
         } 
         
         if(checkLetter === false){
