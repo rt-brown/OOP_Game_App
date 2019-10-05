@@ -48,10 +48,11 @@
         
         for (let index = 0; index < liElements.length; index++) {
             if (letter === liElements[index].textContent) {
-                console.log('true');
-                
+                //console.log('true');
+                return true
             }
         }
+        //console.log('false');
         return false
         
      }
@@ -62,10 +63,18 @@
  */
 
      showMatchedLetter(letter){
-         let matchedLetter = document.getElementsByClassName(`hide letter ${letter}`);
-         for (let index = 0; index < matchedLetter.length; index++) {
-             matchedLetter[index].className = `show letter ${letter}`
-         }
+        const liElements = document.querySelectorAll('.phrase-ul li');
+        console.log(letter.classList);
+        for (let index = 0; index < liElements.length; index++) {
+            
+            if (letter.textContent === liElements[index].textContent) {
+                liElements[index].classList.remove(`hide`);
+                liElements[index].classList.add(`show`);
+                
+            }
+            
+        }
+       
      }
  }
 
