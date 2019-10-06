@@ -110,4 +110,36 @@
         }
     }
 
+    /*resetGame() {
+
+        //resetting life images
+        const lifeImage = document.querySelectorAll('li.tries img');
+        const lifeImageArray = Array.prototype.slice.call(lifeImage);
+    
+        for (let i = 0; i < lifeImageArray.length; i += 1) {
+          lifeImageArray[i].setAttribute('src', 'images/liveHeart.png');
+        }
+    
+        //resetting keyboard keyboard buttons
+        const keyboardButtons = document.querySelectorAll('div#qwerty button');
+        const keyboardButtonsArray = Array.prototype.slice.call(keyboardButtons);
+    
+        for (let i = 0; i < keyboardButtonsArray.length; i += 1) {
+          keyboardButtonsArray[i].className = 'key';
+          keyboardButtonsArray[i].style.opacity = 1.0;
+          keyboardButtonsArray[i].disabled = false;
+        }
+    
+        //resetting phrase
+        this.activePhrase = null;
+        this.phraseClass = null;
+        this.phraseDiv.innerHTML = '<ul></ul>';
+        this.missed = 0;
+        this.overlayDiv.className = '';
+    
+    
+      };*/
+
  };
+
+ 
