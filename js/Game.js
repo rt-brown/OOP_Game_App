@@ -98,7 +98,7 @@ won */
             overlayH1.textContent = 'Congrats You Have Won!';
         } else {
             overlay.className = 'lose'
-            overlayH1.textContent = 'Game Over. Please Try Again.s'
+            overlayH1.textContent = 'Game Over. Please Try Again.'
         }
     }
 
