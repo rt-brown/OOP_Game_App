@@ -48,11 +48,11 @@
         
         for (let index = 0; index < liElements.length; index++) {
             if (letter === liElements[index].textContent) {
-                //console.log('true');
+                
                 return true
             }
         }
-        //console.log('false');
+        
         return false
         
      }

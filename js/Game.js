@@ -17,7 +17,7 @@
          [
              'Where is my phone',
              'I need coffee',
-             'The New York Giants suck',
+             'Go Cardinals',
              'I love my wife',
              'I love my son'
         ];
@@ -51,12 +51,13 @@
      startGame(){
         document.getElementById('overlay').style.visibility = "hidden";
         this.activePhrase = this.getrandomPhrase();
-        //this.randomPhrase;
         this.activePhrase.addPhraseToDisplay();
-        //this.activePhrase.checkLetter();
-        //this.activePhrase = this.randomPhrase;
      };
-     //filter method isn't working
+
+/**
+ * Checks for winning move
+ * @return {boolean} True if game has been won, false if game wasn't
+won */
      checkForwin(){
         const allLetters = Array.from(document.querySelectorAll('.phrase-ul > li'));
         const visibleLetters = Array.from(document.querySelectorAll("[class$=show]"));
@@ -70,6 +71,11 @@
         }
      }
 
+/**
+ * Increases the value of the missed property
+ * Removes a life from the scoreboard
+ * Checks if player has remaining lives and ends game if player is out
+ */
      removeLife(){
         this.missed += 1
         const hearts = document.querySelectorAll('.tries > img');
@@ -79,19 +85,27 @@
         }
      };
 
+/**
+ * Displays game over message
+ * @param {boolean} gameWon - Whether or not the user won the game
+ */
     gameOver(){
         const overlay = document.getElementById('overlay');
         overlay.style.visibility = "visible";
         const overlayH1 = document.getElementById('game-over-message');
         if (this.checkForwin() === true ){
             overlay.className = 'win';
-            overlayH1.textContent = 'Congrats you have won!';
+            overlayH1.textContent = 'Congrats You Have Won!';
         } else {
             overlay.className = 'lose'
-            overlayH1.textContent = 'Game Over'
+            overlayH1.textContent = 'Game Over. Please Try Again.s'
         }
     }
 
+/**
+ * Handles onscreen keyboard button clicks
+ * @param (HTMLButtonElement) button - The clicked button element
+ */
     handleInteraction(button){
         button.disabled = true;
         const checkLetter = this.activePhrase.checkLetter(button.textContent);
@@ -110,19 +124,23 @@
         }
     }
 
-    /*resetGame() {
+    resetGame() {
 
-        //resetting life images
-        const lifeImage = document.querySelectorAll('li.tries img');
-        const lifeImageArray = Array.prototype.slice.call(lifeImage);
-    
-        for (let i = 0; i < lifeImageArray.length; i += 1) {
-          lifeImageArray[i].setAttribute('src', 'images/liveHeart.png');
-        }
-    
-        //resetting keyboard keyboard buttons
-        const keyboardButtons = document.querySelectorAll('div#qwerty button');
-        const keyboardButtonsArray = Array.prototype.slice.call(keyboardButtons);
+        const phraseUl = document.querySelector('.phrase-ul');
+    const liElements = document.querySelectorAll('.phrase-ul li');
+    for (let index = 0; index < liElements.length; index++) {
+        phraseUl.removeChild(liElements[index]);
+     }
+
+     
+    const lifeImageArray = Array.from(document.querySelectorAll('li.tries img'));
+ 
+     for (let i = 0; i < lifeImageArray.length; i += 1) {
+       lifeImageArray[i].setAttribute('src', 'images/liveHeart.png');
+     }
+
+
+    const keyboardButtonsArray = Array.from(document.querySelectorAll('div#qwerty button'));
     
         for (let i = 0; i < keyboardButtonsArray.length; i += 1) {
           keyboardButtonsArray[i].className = 'key';
@@ -130,15 +148,8 @@
           keyboardButtonsArray[i].disabled = false;
         }
     
-        //resetting phrase
-        this.activePhrase = null;
-        this.phraseClass = null;
-        this.phraseDiv.innerHTML = '<ul></ul>';
-        this.missed = 0;
-        this.overlayDiv.className = '';
     
-    
-      };*/
+      };
 
  };
 
